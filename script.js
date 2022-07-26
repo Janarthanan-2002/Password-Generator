@@ -32,6 +32,7 @@ function generatePassword() {
     const len = lenEl.value;
     if(len>30){
         alert("MAXIMUM SIZE IS 30");
+        
     }
     else if(len<2){
         alert("MINIMUM SIZE IS 2");

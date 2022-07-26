@@ -30,35 +30,16 @@ function getSymbol() {
 
 function generatePassword() {
     const len = lenEl.value;
-
+    if(len>30){
+        alert("MAXIMUM SIZE IS 30");
+    }
+    else if(len<2){
+        alert("MINIMUM SIZE IS 2");
+    }
+    else{
     let password = "";
-
-    if (upperEl.checked) {
-        password += getUppercase();
-    }
-
-    if (lowerEl.checked) {
-        password += getLowercase();
-    }
-
-    if (numberEl.checked) {
-        password += getNumber();
-    }
-
-    if (symbolEl.checked) {
-        password += getSymbol();
-    }
-
     for (let i = password.length; i < len; i++) {
-        const x = generateX();
-        password += x;
-    }
-
-    pwEl.innerText = password;
-}
-
-function generateX() {
-    const xs = [];
+        const xs = [];
     if (upperEl.checked) {
         xs.push(getUppercase());
     }
@@ -74,77 +55,39 @@ function generateX() {
     if (symbolEl.checked) {
         xs.push(getSymbol());
     }
+    if (xs.length === 0){
+        alert("NOTHING IS SELECTED");
+        break;
+    }
+    else{
+     const x= xs[Math.floor(Math.random() * xs.length)];  
+     password += x;
+     pwEl.innerText = password;
+    }
+  }
+}
+}
 
-    if (xs.length === 0) return "";
+function generateX() {
+    
+    if (xs.length === 0)
+        return "";
 
     return xs[Math.floor(Math.random() * xs.length)];
 }
 
 generateEl.addEventListener("click", generatePassword);
-generateEl.addEventListener("click", imagechange);
-function imagechange(){
-    document.getElementById('img-text').style.fontFamily="Poppins, sans-serif";
-    document.getElementById('img-text').style.fontWeight="bold";
-    document.getElementById('imgchange').src='password.jpg';
-    document.getElementById('img-text').style.left='5px';
-    document.getElementById('img-text').innerHTML="PASSWORD GENERATED !";
-}
 
-if(lenEl.addEventListener("change", checking) | 
-upperEl.addEventListener("change", checking) |
-lowerEl.addEventListener("change", checking) | 
-numberEl.addEventListener("change", checking) |
-symbolEl.addEventListener("change",checking) ){checking}
-function checking(){
-    var i=1;
-    while(i){
-        var source=document.getElementById('imgchange').src;
-        if(source.value=='scan.jpg') {
-            i=0;
-            break;
-        }
-        else{
-            const timeout=help();
-            function help(){
-                document.getElementById('imgchange').style.left='5px';
-                document.getElementById('imgchange').src='scan.jpg';
-                document.getElementById('img-text').style.fontFamily="Poppins, sans-serif";
-                document.getElementById('img-text').style.fontWeight="bold";
-                document.getElementById('img-text').style.left='5px';
-                document.getElementById('img-text').innerHTML= "GENERATING PASSWORD !";
-                
-            }
-        }
-        i=0;
-    }
-}
-var showText = function (target, message, index, interval,msg) {   
-    if (index < message.length) {
-        var msg=msg+message[index++];
-        document.getElementById('img-text').innerHTML= msg;
-      setTimeout(function () { showText(target, message, index, interval,msg); }, interval);
-    }
-}
-function notify() {  
-    document.getElementById('img-text').style.fontFamily="Poppins, sans-serif";
-    document.getElementById('img-text').style.fontWeight="bold";
-    document.getElementById('img-text').style.left="2px";
-    document.getElementById('img-text').innerHTML="  PASSWORD   COPIED TO CLIPBOARD !";
-  }
 copyEl.addEventListener("click", () => {
     const textarea = document.createElement("textarea");
     const password = pwEl.innerText;
-
     if (!password) {
         return;
     }
-
     textarea.value = password;
     document.body.appendChild(textarea);
     textarea.select();
     document.execCommand("copy");
     textarea.remove();
-    notify();
-    
-    
+    alert("Password copied to clipboard");
 });

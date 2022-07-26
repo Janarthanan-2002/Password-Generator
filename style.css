@@ -1,0 +1,225 @@
+
+@media screen and (min-width:481px){
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+        
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: black;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        min-height: 100vh;
+    }
+    .image{
+        max-width: 40%;
+        margin-top: 20vh;
+        margin-bottom: 30vh;
+        margin-left:5%;
+        height:80%;
+        width:40%;
+    }
+    .image #imgchange{
+        height: 50%;
+        width: 60%;
+    }
+    .pw-container {
+        
+        background-color: black;
+        box-shadow: 0px 0px 4px 4px rgb(243, 243, 243);
+        min-width: 500px;
+        width: 60%;
+        margin-left: 5%;
+        margin-right:10%;
+        min-height: 80%;
+    }
+
+    .pw-header {
+        padding: 1.5rem;
+        color:black
+    }
+
+    .pw {
+        background-color:white;
+        display: flex;
+        font-size: 1.5rem;
+        align-items: center;
+        height: 90px;
+        width: 100%;
+        position: relative;
+        padding: 1rem;
+        overflow: auto;
+    }
+
+    .pw button {
+        background-color: rgb(0, 0, 0);
+        border: none;
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+        font-family: inherit;
+        font-weight: bold;
+        padding: 0.25rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        opacity: 0;
+    }
+
+    .pw:hover button {
+        opacity: 1;
+        transform: translate(0, 0%);
+    }
+
+    .pw-body {
+        padding: 0 1rem 1rem;
+    }
+
+    .form-control {
+        color: #eee;
+        display: flex;
+        justify-content:space-between;
+        margin: 0.75rem 0;
+    }
+
+    .generate {
+        background-color: yellow;
+        border: none;
+        color:black;
+        cursor: pointer;
+        display: block;
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding: 0.75rem;
+        margin-top: 1rem;
+        width: 100%;
+    }
+    .generate:hover{
+        background-color: yellow;
+        border-style: solid;
+        border-color: white;
+        color:black;
+        cursor: pointer;
+        display: block;
+        font-size: 1.7rem;
+        font-weight: bold;
+        padding: 0.75rem;
+        margin-top: 1rem;
+        width: 100%;
+    }
+}
+@media screen and (max-width:480px){
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+        
+    * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        background-color: rgb(0, 0, 0);
+        color: white;
+        display: flex;
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        min-height: 100vh;
+    }
+    .image{
+        
+        left:30%;
+        right:30%;
+        position: fixed;
+        top:2.5%;
+        height:40%;
+    }
+    .image #imgchange{
+        height:100px;
+    }
+    .pw-container {
+        bottom: 10%;
+        margin-top:75%;
+        left:10%;
+        right:8%;
+        position: fixed;
+        background-color: black;
+        box-shadow: 0px 0px 4px 4px rgb(243, 243, 243);
+        max-width: 80%;
+        height: 60%;
+    }
+    
+    .pw-header {
+        padding: 1.5rem;
+        color:black
+    }
+    
+    .pw {
+        background-color:white;
+        display: flex;
+        font-size: 1.5rem;
+        align-items: center;
+        height: 90px;
+        width: 100%;
+        position: relative;
+        padding: 1rem;
+        overflow: auto;
+    }
+    
+    .pw button {
+        background-color: rgb(0, 0, 0);
+        border: none;
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+        font-family: inherit;
+        font-weight: bold;
+        padding: 0.25rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        opacity: 0;
+    }
+    
+    .pw:hover button {
+        opacity: 1;
+        transform: translate(0, 0%);
+    }
+    
+    .pw-body {
+        padding: 0 1rem 1rem;
+    }
+    
+    .form-control {
+        color: #eee;
+        display: flex;
+        justify-content:space-between;
+        margin: 0.75rem 0;
+    }
+    
+    .generate {
+        background-color: yellow;
+        border: none;
+        color:black;
+        cursor: pointer;
+        display: block;
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding: 0.75rem;
+        margin-top: 1rem;
+        width: 100%;
+    }
+    .generate:hover{
+        background-color: yellow;
+        border-style: solid;
+        border-color: white;
+        color:black;
+        cursor: pointer;
+        display: block;
+        font-size: 1.7rem;
+        font-weight: bold;
+        padding: 0.75rem;
+        margin-top: 1rem;
+        width: 100%;
+    }
+    }
